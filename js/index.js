@@ -111,9 +111,9 @@ function displayResults(){
   for (var i=0;i<activearr.length;i++){
     //construct icon html
     if(activearr[i].iconlink){
-    iconPrep="<img class=\"mobileAdjust\" src=\""+activearr[i].iconlink+"\" style=\"width:100px;height:100px;alt=\""+activearr[i].userName+"\">";}
+    iconPrep="<img class=\"mobileAdjust\" src=\""+activearr[i].iconlink+"\" style=\"width:200px;height:200px;alt=\""+activearr[i].userName+"\">";}
     else{
-    iconPrep="<img class=\"mobileAdjust\" src=\"https://dl.dropboxusercontent.com/s/o1lukwjeowwuuld/iconmissing.jpg?dl=0\" style=\"width:100px;height:100px;alt=\""+activearr[i].userName+"\">";
+    iconPrep="<img class=\"mobileAdjust\" src=\"https://dl.dropboxusercontent.com/s/o1lukwjeowwuuld/iconmissing.jpg?dl=0\" style=\"width:200px;height:200px;alt=\""+activearr[i].userName+"\">";
     }
     //construct link html
     if(activearr[i].url){
@@ -128,9 +128,9 @@ function displayResults(){
     linkPrep="<a href=\"#\"><h3>"+activearr[i].userName+"</h3></a>";
     }
     //construct status html
-    if(!activearr[i].exists){status="User Not Found!";}
-    else if(activearr[i].status){status=activearr[i].status;}
-    else{status="Offline";}
+    if(!activearr[i].exists){status="<h4>User Not Found!</h4>";}
+    else if(activearr[i].status){status="<h4>"+activearr[i].status+"</h4>";}
+    else{status="<h4>Offline</h4>";}
     
     //construct table rows html
     if(activearr[i].live){
@@ -159,6 +159,10 @@ function displayResults(){
                            })
     //adjusts the h3 user link only
     $('h3').css({"font-size": "18px",
+               "line-height": "1.3",
+               "margin": "1em 0 .2em" })
+    
+    $('h4').css({"font-size": "18px",
                "line-height": "1.3",
                "margin": "1em 0 .2em" })
     ;}
